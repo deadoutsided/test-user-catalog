@@ -1,0 +1,45 @@
+@import '../index.css';
+.H1 {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: clamp(36px, 5%, 64px);
+  margin: 0px;
+}
+
+.H2 {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 20px) !important;
+  margin: 0px;
+}
+
+.Text {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.Text-medium {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.Text-medium::placeholder {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.Text-small {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 10px;
+  margin: 0px;
+}
+
+.black {
+  color: black;
+}
