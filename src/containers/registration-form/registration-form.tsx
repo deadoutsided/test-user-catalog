@@ -43,7 +43,8 @@ function RegistrationForm() {
       [formData, formErrors]
     ),
     onButtonClick: useCallback(
-      (e) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (e: any) => {
         e.preventDefault();
         console.log(passwordVisibillity);
         setVisibillity(!passwordVisibillity);
