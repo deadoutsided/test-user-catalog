@@ -9,7 +9,19 @@ import debounce from "../../utils/debounce";
 import { cn as bem } from "@bem-react/classname";
 import "./input.css";
 
-function Input(props) {
+type TInputProps = {
+  name: string,
+  type: string,
+  value: string,
+  placeholder: string,
+  onChange: (value: string, name: string) => void,
+  button: boolean,
+  visibillity: boolean,
+  onButtonClick: (e) => void, 
+  error?: boolean,
+}
+
+function Input(props: TInputProps) {
   const [value, setValue] = useState(props.value);
 
   const onChangeDebounce = useCallback(
@@ -30,7 +42,7 @@ function Input(props) {
     <label className={cn() + ' Text black'}>
       {props.name}
       <input
-        className={cn("field", props.error ? {text: true, error: true} : { text: true })}
+        className={cn("field", props?.error ? {text: true, error: true} : { text: true })}
         value={value}
         type={props.visibillity ? "text" : "password"}
         placeholder={props.placeholder}

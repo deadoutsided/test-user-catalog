@@ -60,6 +60,7 @@ function RegistrationForm() {
         type="text"
         value={""}
         placeholder="Артур"
+        button={false}
         visibillity
         onChange={(name: string) => setFormData({ ...formData, name })}
         error={formErrors.name}
@@ -68,6 +69,7 @@ function RegistrationForm() {
         name="Электронная почта"
         type="text"
         value={""}
+        button={false}
         visibillity
         placeholder="example@mail.ru"
         onChange={(email: string) => setFormData({ ...formData, email })}
