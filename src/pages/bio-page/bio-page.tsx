@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
 import PersonalCard from "../../components/personal-card/personal-card";

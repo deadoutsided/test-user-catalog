@@ -1,4 +1,4 @@
-import { AppDispatch, AppThunk } from "../../utils/types";
+import { AppDispatch, /* AppThunk */ } from "../../utils/types";
 import {
   GET_USERS_FAILED,
   GET_USERS_REQUEST,
@@ -30,7 +30,8 @@ const getUsersCatalogRequest = async () => {
   return await request('/users?per_page=8')
 }
 
-export const getUsersCatalog: AppThunk = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getUsersCatalog: any/* AppThunk */ = () => {
   return function(dispatch: AppDispatch) {
     dispatch({ type: GET_USERS_REQUEST })
     getUsersCatalogRequest()

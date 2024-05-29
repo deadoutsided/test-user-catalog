@@ -1,5 +1,5 @@
 import { deleteCookie, setCookie } from "../../utils/cookie";
-import { AppDispatch, AppThunk, IRegisterResp, ISignInData, TRegisterBody } from "../../utils/types";
+import { AppDispatch, /* AppThunk, */ IRegisterResp, ISignInData, TRegisterBody } from "../../utils/types";
 import {
   SIGN_IN_REQUEST,
   SIGN_IN_FAILED,
@@ -79,7 +79,8 @@ const registrationRequest = async (data: TRegisterBody) => {
   });
 };
 
-export const getRegistrationData: AppThunk = (data: TRegisterBody) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getRegistrationData: any /* AppThunk */ = (data: TRegisterBody) => {
   return function(dispatch: AppDispatch) {
     dispatch({ type: REGISTRATION_REQUEST });
     registrationRequest(data)
@@ -104,7 +105,8 @@ const signInRequest = async (data: ISignInData) => {
   });
 };
 
-export const getSignInData: AppThunk = (data: TRegisterBody) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getSignInData: any/* AppThunk */ = (data: TRegisterBody) => {
   return function(dispatch: AppDispatch) {
     dispatch({ type: SIGN_IN_REQUEST });
     signInRequest(data)
@@ -129,7 +131,8 @@ const logOutRequest = async () => {
   });
 };
 
-export const logOutData: AppThunk = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const logOutData: any /* AppThunk */ = () => {
   return function(dispatch: AppDispatch) {
     dispatch({ type: LOG_OUT_REQUEST });
     logOutRequest()

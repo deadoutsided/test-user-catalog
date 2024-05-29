@@ -17,7 +17,8 @@ type TInputProps = {
   onChange: (value: string, name: string) => void,
   button: boolean,
   visibillity: boolean,
-  onButtonClick: (e) => void, 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onButtonClick?: (e: any) => void, 
   error?: boolean,
 }
 
@@ -49,7 +50,7 @@ function Input(props: TInputProps) {
         onChange={onChange}
       />
       {props.error ? <span className={cn("error") + ' Text-small'}>{"Ошибка"}</span> : <></>}
-      {props.button ? <button type="button" className={cn('eye-button')} onClick={(e) => props.onButtonClick(e)}></button> : <></>}
+      {props.button ? <button type="button" className={cn('eye-button')} onClick={(e) => props.onButtonClick ? props.onButtonClick(e) : 'a'}></button> : <></>}
     </label>
   );
 }

@@ -1,7 +1,11 @@
 import './personal-card.css'
 import { cn as bem } from '@bem-react/classname'
-
-function PersonalCard({name, job="Партнер", avatar}) {
+type TPersanalCardProps = {
+  name: string,
+  job?: string,
+  avatar: string | undefined,
+}
+function PersonalCard({name, job="Партнер", avatar}: TPersanalCardProps) {
 
   const cn = bem('PersonalCard');
 

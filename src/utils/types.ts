@@ -2,6 +2,8 @@ import { ActionCreator } from "redux";
 import { store } from "../main";
 import { ThunkAction } from "redux-thunk";
 import { TypedUseSelectorHook, useDispatch as dispatchHook, useSelector as selectorHook } from "react-redux";
+import { TUserDataActions } from "../services/actions/user-data";
+import { TUsersCatActions } from "../services/actions/users-catalog";
 
 export interface IRegisterData  {
   name: string,
@@ -33,6 +35,7 @@ export interface IAuthorizeData {
   email: string,
   password: string,
 }
+export type TApplicationActions = TUserDataActions | TUsersCatActions
 
 export type RootState = ReturnType<typeof store.getState>;
 

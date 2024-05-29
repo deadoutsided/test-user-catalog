@@ -29,7 +29,8 @@ function SignInForm() {
       [formData]
     ),
     onButtonClick: useCallback(
-      (e) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (e: any) => {
         e.preventDefault();
         console.log(passwordVisibillity);
         setVisibillity(!passwordVisibillity);
@@ -46,6 +47,7 @@ function SignInForm() {
         type="text"
         value={""}
         visibillity
+        button={false}
         placeholder="example@mail.ru"
         onChange={(email: string) => setFormData({ ...formData, email })}
       />
