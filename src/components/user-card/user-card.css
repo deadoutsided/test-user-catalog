@@ -1,0 +1,46 @@
+.UserCard {
+  height: 260px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 36px 20px 20px;
+  box-shadow: 0px 1px 3.98px 0px #33333326;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.UserCard:hover {
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+.UserCard-avatar {
+  width: 124px;
+  height: 124px;
+  border-radius: 100%;
+}
+
+.UserCard-name {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 20px;
+  color: #151317;
+}
+
+.UserCard-button {
+  align-self: flex-end;
+  border: 0px;
+  height: 13px;
+  width: 15px;
+  padding: 0;
+  background-position: center;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-image: url('../../assets/Like_image.svg');
+}
+
+.UserCard-button_active {
+  background-image: url('../../assets/Like_image_active.svg');
+}

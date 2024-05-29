@@ -8,7 +8,6 @@ import {
 import debounce from "../../utils/debounce";
 import { cn as bem } from "@bem-react/classname";
 import "./input.css";
-import "../../styles/fonts.css"
 
 function Input(props) {
   const [value, setValue] = useState(props.value);

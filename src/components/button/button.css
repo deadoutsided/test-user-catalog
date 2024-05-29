@@ -1,0 +1,11 @@
+.Button {
+  font-family: 'Roboto';
+  font-size: 16px;
+  box-sizing: border-box;
+  height: 40px;
+  background-color: transparent;
+  border: 1px #F8F8F8 solid;
+  border-radius: 8px;
+  color: #F8F8F8;
+  cursor: pointer;
+}

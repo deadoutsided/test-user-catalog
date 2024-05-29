@@ -1,0 +1,10 @@
+export const SIGN_IN_REQUEST = "SIGN_IN_REQUEST" as const;
+export const SIGN_IN_FAILED = "SIGN_IN_FAILED" as const;
+export const SIGN_IN_SUCCESS = "SIGN_IN_SUCCESS" as const;
+export const REGISTRATION_REQUEST = "REGISTRATION_REQUEST" as const;
+export const REGISTRATION_FAILED = "REGISTRATION_FAILED" as const;
+export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS" as const;
+export const SET_LIKE_ARR = "SET_LIKE_ARR" as const;
+export const LOG_OUT_REQUEST = "LOG_OUT_REQUEST" as const;
+export const LOG_OUT_FAILED = "LOG_OUT_FAILED" as const;
+export const LOG_OUT_SUCCESS = "LOG_OUT_SUCCESS" as const;

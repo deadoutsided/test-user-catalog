@@ -1,0 +1,39 @@
+.About {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: clamp(70px, 10%, 130px);
+  justify-content: center;
+  padding: 35px 16px;
+}
+
+.About-main {
+  font-family: 'Roboto';
+  width: clamp(340px, 50%, 630px);
+}
+
+.About-phone{
+  font-family: 'Roboto';
+  font-size: 16px;
+  background-image: url("../../assets/phone.svg");
+  background-repeat: no-repeat;
+  padding: 2px 0 2px 30px;
+  background-position: center left;
+}
+
+.About-mail{
+  font-family: 'Roboto';
+  font-size: 16px;
+  background-image: url("../../assets/mail.svg");
+  background-repeat: no-repeat;
+  padding: 2px 0 2px 30px;
+  background-position: center left;
+}
+
+@media screen and (max-width: 637px) {
+  .About {
+    gap: 0;
+    column-gap: 70px;
+    justify-content: start;
+  }
+}

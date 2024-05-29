@@ -1,13 +1,18 @@
 import { FormEvent, useCallback, useState } from "react";
 import Input from "../../components/input/input";
-import { IRegisterData, IRegisterErrors } from "../../utils/types";
+import { IRegisterData, IRegisterErrors, useDispatch, useSelector } from "../../utils/types";
 import { registerFormValidation } from "../../utils/form-validation";
 import { cn as bem } from "@bem-react/classname";
 import "./registration-form.css";
-import "../../styles/fonts.css"
+import "../../styles/fonts.css";
+import { getRegistrationData } from "../../services/actions/user-data";
+import { Link, Navigate } from "react-router-dom";
 
 function RegistrationForm() {
   const cn = bem("Form");
+
+  const dispatch = useDispatch();
+  const {authorized} = useSelector(store => store.userData)
 
   const [formData, setFormData] = useState<IRegisterData>({
     name: "",
@@ -28,9 +33,12 @@ function RegistrationForm() {
         event.preventDefault();
         setFromErrors(registerFormValidation(formData));
         console.log(formData);
-        if (Object.values(formErrors).includes(false)) {
+        if (Object.values(formErrors).includes(true)) {
           return;
         }
+        const registerData = {email: formData.email, password: formData.password}
+        console.log('somethings wrond')
+        dispatch(getRegistrationData(registerData));
       },
       [formData, formErrors]
     ),
@@ -89,7 +97,11 @@ function RegistrationForm() {
         }
         error={formErrors.passwordRepeat}
       />
-      <button className={cn('button')} type="submit">Зарегистрироваться</button>
+      <button className={cn("button")} type="submit">
+        Зарегистрироваться
+      </button>
+      <p>Уже есть аккаунт? <Link to='/signin'>Войти</Link></p>
+      {authorized ? <Navigate to='/'/> : <></>}
     </form>
   );
 }
